@@ -1,10 +1,14 @@
 # Facial-expression-recognition-system-based-on-random-forest
 项目介绍: 基于Xilinx XC7A35T-FGG484-2 FPGA平台，通过工业摄像头收集人脸表情图像并传至pc端，然后用随机森林
 算法训练得到表情预测值，并评估训练结果。
+
 主要技术: TMDS协议解码、RGB2YCbCr硬件加速转换、CCLC线性校正算法、RS485差分传输
+
 软件部分:
 1. FPGA端数据采集处理、形成自建数据集。
 2. 随机森林算法+模型训练，得到表情预测结果。
+
+
 主要工作:
 1. 数据采集：采用Xilinx XC7A35T FPGA平台与onsemi HDMI接口芯片，通过TMDS解码技术从工业摄像头人脸表情，
 经RS485接口传输原始数据。
