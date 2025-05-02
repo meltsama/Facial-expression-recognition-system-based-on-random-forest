@@ -2,8 +2,8 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
-# from sklearn.ensemble import RandomForestClassifier
+# from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -30,15 +30,16 @@ X = X / 255.0
 # 划分训练集和测试集
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# 初始化SVM分类器
-svm_classifier = SVC(kernel='rbf', C=1.0, gamma='scale', random_state=42)
-# rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
+# 初始化随机森林
+# svm_classifier = SVC(kernel='rbf', C=1.0, gamma='scale', random_state=42)
+rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
 
 # 训练模型
-svm_classifier.fit(X_train, y_train)
-
+# svm_classifier.fit(X_train, y_train)
+rf_classifier.fit(X_train, y_train)
 # 预测测试集
-y_pred = svm_classifier.predict(X_test)
+# y_pred = svm_classifier.predict(X_test)
+y_pred_rf = rf_classifier.predict(X_test) 
 
 # 评估模型
 print("Classification Report:")
